@@ -1,0 +1,26 @@
+ // Flash Méssages
+.notice, .alert {
+  text-align: center;
+}
+.is-success {
+  position: relative;
+  background-color: #5A2;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: 400;
+  height: 78px;
+  margin: 3px 0 -81px 0;
+  line-height: 74px;
+  z-index: 9999;
+}
+.is-danger {
+  position: relative;
+  background: #D44;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: 400;
+  height: 78px;
+  margin: 3px 0 -81px 0;
+  line-height: 50px;
+  z-index: 9999;
+}

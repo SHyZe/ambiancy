@@ -1,0 +1,43 @@
+.badge {
+	line-height: 0.3 !important;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.badge-secondary {
+	background-color: #6c757d !important;
+	color: #EFF551 !important;
+	width: 34px !important;
+	height: 30px !important;
+	border-radius: 50% !important;
+}
+small.p_count {
+	margin-left: 0 !important;
+	font-size: 20px !important;
+	font-weight: bold;
+}
+/* TITLE */
+hr.title_show {
+	padding-bottom: 2px;
+	background-color: #8C8C8C;
+}
+hr.title_accueil {
+	padding-bottom: 1px;
+	background-color: #8C8C8C;
+}
+/* PRODUCTS */
+hr.product_show {
+	padding-bottom: 2px;
+	background-color: #8C8C8C;
+}
+hr.product_accueil {
+	padding-bottom: 1px;
+	background-color: #8C8C8C;
+}
+/* POSTS */
+hr.post_show {
+	padding-bottom: 2px;
+	background-color: #8C8C8C;
+}
+hr.post_accueil {
+	padding-bottom: 1px;
+	background-color: #8C8C8C;
+}

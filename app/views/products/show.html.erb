@@ -1,0 +1,81 @@
+<div class="container mt-5" style="padding: 80px 0;">
+	<div class="card" style="width: 100%;">
+		<div class="row">
+			<div class="col offset-2 d-flex justify-content-around my-5">
+				<%= image_tag @product.picture.url(:big) %>
+			</div>
+			<div class="col">
+				<div class="col py-4 m-0">
+
+					<h1><%= @product.name %></h1>
+					<p>
+						<strong>Name:</strong>
+						<%= @product.name %>
+					</p>
+
+					<p>
+						<strong>Description:</strong>
+						<%= @product.description %>
+					</p>
+
+					<p>
+						<strong>Price:</strong>
+						<%= @product.price %>
+					</p>
+
+					<p>
+						<strong>Category product:</strong>
+						<%= @product.category_product.name %>
+					</p>
+
+					<p>
+						<strong>User:</strong>
+						<%= @product.user.username %></td>
+					</p>
+
+					
+					<%= link_to 'Editer', edit_product_path(@product), class: 'btn btn-sm btn-warning' %> |
+					<%= link_to 'Retour', products_path, class: 'btn btn-sm btn-danger' %>
+
+					<hr class="product_show">
+
+					<% if current_user %>
+						<h2 align="center">Ajouter un commentaire</h2>
+						<% form_with model: [@product, @comment_product] do |f| %>
+							<%= f.text_field :content %>
+							<%= f.text_field "Commenter" %>
+						<% end %>
+					<% else %>
+						<p>
+							<span>Vous devez vous connectez</span>
+							<%= link_to "Connexion", new_user_session_path %>
+							<span>Avant de pouvoir poster un commentaire.</span>
+						</p>
+						<div id="comment_product_panel">
+							<% @comment_products.each do |comment_product| %>
+								<%= render 'comment_products/comment_product', comment_product: comment_product %>
+							<% end %>
+						</div>
+					<% end %>
+
+
+			<!-- 		<hr class="product_show">
+
+					<h2 align="center">Commentaires</h2>
+					<%# for comment_product in @comment_products %>
+						<div class=" d-flex justify-content-around">
+							<p>
+								<%#= truncate(comment_product.content, length: 100) %> ♥
+							</p>
+							<span>
+								le <%#= l(comment_product.created_at.to_date, format: :long) %>
+								<button class="btn btn-sm btn-danger ml-4">Supprimer</button>
+							</span>	
+						</div>
+					<%# end %> -->
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

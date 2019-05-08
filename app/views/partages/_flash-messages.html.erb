@@ -1,0 +1,14 @@
+<% if flash[:notice] %>
+  <div class="notification is-success global-notification">
+    <p class="notice"><%= notice %></p>
+  </div>
+<% end %>
+  <% if flash[:alert] %>
+    <div class="notification is-danger global-notification">
+    <p class="alert"><%= alert %></p>
+  </div>
+<% end %>
+<script>
+  $(".is-success").fadeOut(6000);
+  $(".is-danger").fadeOut(6000);
+</script>

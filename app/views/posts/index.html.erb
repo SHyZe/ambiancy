@@ -1,0 +1,53 @@
+<div class="container mt-5" style="padding: 80px 0;">
+	<div class="row">
+		<div class="col">
+			<div class="col py-4 m-0">
+
+				<div class="field">
+					<h1>Tous mes Posts
+						<span class="text-muted" style="font-size: 16px;">Total de commentaires:</span>
+						<small class="badge badge-secondary">
+							<span class="p_count text-muted">
+								<%= pluralize(post.comment_posts.count, "Commentaire") %>
+							</span>
+						</small>
+					</h1>
+					<p>
+						<%= form_tag posts_path, method: :get do %>
+							<%= text_field_tag :search, params[:search] %>
+							<%= submit_tag "Rechercher" %>
+						<% end %>
+					</p>
+				</div>
+
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Titre</th>
+							<th>Contenu</th>
+							<th>Commentaires</th>
+							<th colspan="3">Actions</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<% @posts.each do |post| %>
+							<tr>
+								<td><%= post.title %></td>
+								<td><%= truncate(post.content, length: 100) %></td>
+								<td><%= post.title.length %></td>
+								<td><%= link_to 'Voir', post, class: 'btn btn-sm btn-info' %></td>
+								<td><%= link_to 'Editer', edit_post_path(post), class: 'btn btn-sm btn-warning' %></td>
+								<td><%= link_to 'Supprimer', post, method: :delete, data: { confirm: 'Êtes vous sure de vouloir supprimer ce Post ?' }, class: 'btn btn-sm btn-danger' %></td>
+							</tr>
+						<% end %>
+					</tbody>
+				</table>
+
+				<br>
+
+				<%= link_to 'New Post', new_post_path %>
+			</div>
+		</div>
+	</div>
+</div>

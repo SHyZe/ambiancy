@@ -1,0 +1,16 @@
+<div class="container mt-5">
+	<div class="row">
+		<div class="col">
+			<div class="col py-4 m-0">
+
+			<h1>Editer <%= @post.title %></h1>
+
+				<%= render 'form', post: @post %>
+
+				<%= link_to 'Voir plus', @post, class: 'btn btn-sm btn-info' %> |
+				<%= link_to 'Retour', posts_path, class: 'btn btn-sm btn-danger' %>
+
+			</div>
+		</div>
+	</div>
+</div>
