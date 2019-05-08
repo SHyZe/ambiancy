@@ -5,12 +5,11 @@
 
 				<div class="field">
 					<h1>Tous mes Posts
-						<span class="text-muted" style="font-size: 16px;">Total de commentaires:</span>
-						<small class="badge badge-secondary">
-							<span class="p_count text-muted">
-								<%= pluralize(post.comment_posts.count, "Commentaire") %>
-							</span>
-						</small>
+						<!-- <small class="p_count text-muted">
+							<%# @posts.all.each do |post| %>
+								<%#= pluralize(post.comment_posts.count, "Commentaire") %>
+							<%# end %>
+						</small> -->
 					</h1>
 					<p>
 						<%= form_tag posts_path, method: :get do %>

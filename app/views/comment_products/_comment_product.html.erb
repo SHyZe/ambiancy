@@ -1,11 +1,15 @@
 <div id="comment_product-<%= comment_product.id %>">
-	[<%= comment_product.created_at.strftime("%A %e %B %Y") %>]
-	<%= comment_product.user.username %>
+	<small>le <%= l(comment_product.created_at.to_date, format: :long) %></small>
+	<b>
+		<%= comment_product.user.username %>
+	</b>
 	<% if user_signed_in? %>
-		<% if current_user && current_user == current_user.user ||current_user.admin? %>
-		<%= link_to "Supprimer", method: :delete, remote: true, class: 'btn btn-sm btn-danger' %>
+		<% if comment_product.user_id == current_user.id || current_user.admin? %>
+			<%= link_to "Supprimer", product_comment_product_path(@product, comment_product), method: :delete, remote: true, class: 'btn btn-sm btn-danger' %>
 		<% end %>
 	<% end %>
+	<p>
+		<%= comment_product.content %>
+	</p>
 	<hr>
-	<%= comment_product.content %>
 </div>

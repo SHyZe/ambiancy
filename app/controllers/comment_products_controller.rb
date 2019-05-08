@@ -3,7 +3,7 @@ class CommentProductsController < ApplicationController
 	before_action :authenticate_user!
 
 	def create
-		@comment_product = @product.comment_product.new(comment_product_params)
+		@comment_product = @product.comment_products.new(comment_product_params)
 		@comment_product.user = current_user
 		@comment_product.save
 		# render :json => params

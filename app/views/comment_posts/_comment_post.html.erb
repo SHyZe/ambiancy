@@ -2,10 +2,12 @@
 	[<%= comment_post.created_at.strftime("%A %e %B %Y") %>]
 	<%= comment_post.user.username %>
 	<% if user_signed_in? %>
-		<% if current_user && current_user == current_user.user ||current_user.admin? %>
-		<%= link_to "Supprimer", method: :delete, remote: true, class: 'btn btn-sm btn-danger' %>
+		<% if comment_post.user_id == current_user.id || current_user.admin? %>
+		<%= link_to "Supprimer", post_comment_post_path(@post, comment_post), method: :delete, remote: true, class: 'btn btn-sm btn-danger' %>
 		<% end %>
 	<% end %>
+	<p>
+		<%= comment_post.content %>
+	</p>
 	<hr>
-	<%= comment_post.content %>
 </div>

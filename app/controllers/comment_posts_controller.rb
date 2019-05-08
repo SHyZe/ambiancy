@@ -3,7 +3,7 @@ class CommentPostsController < ApplicationController
 	before_action :authenticate_user!
 
 	def create
-		@comment_post = @post.comment_post.new(comment_post_params)
+		@comment_post = @post.comment_posts.new(comment_post_params)
 		@comment_post.user = current_user
 		@comment_post.save
 	end

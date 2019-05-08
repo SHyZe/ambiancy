@@ -5,12 +5,9 @@
 
 				<div class="field">
 					<h1>Tous mes Produits
-						<span class="text-muted" style="font-size: 16px;">Total de commentaires:</span>
-						<div class="badge badge-secondary">
-							<small class="p_count">
-									<%= @products.count %>
-							</small>
-						</div>
+						<!-- <small class="p_count text-muted">
+								<%#= pluralize(product.comment_products.count, "Commentaire") %>
+						</small> -->
 					</h1>
 					<p>
 						<%= form_tag products_path, method: :get do %>

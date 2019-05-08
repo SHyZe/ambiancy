@@ -19,52 +19,31 @@
 
 			<%= link_to 'Editer', edit_post_path(@post), class: 'btn btn-sm btn-warning' %> |
 			<%= link_to 'Retour', posts_path, class: 'btn btn-sm btn-danger' %>
-		</div>
 
-		<hr class="post_show">
+			<hr class="post_show">
 
-		<h2 align="center">Ajouter un commentaire</h2>
-		<form action="/comment_posts" method="POST">
-			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-			<input type="hidden" name="post_id" value="<%= @post.id %>">
-			<input type="content">
-			<input type="submit" class="btn btn-sm btn-primary">
-		</form>
-
-
-		<hr class="post_show">
-
-		<% if current_user %>
-			<h2 align="center">Ajouter un commentaire</h2>
-			<% form_with model: [@post, @comment_post] do |f| %>
-				<%= f.text_field :content %>
-				<%= f.text_field "Commenter" %>
-			<% end %>
-		<% else %>
-			<p>
-				<span>Vous devez vous connectez</span>
-				<%= link_to "Connexion", new_user_session_path %>
-				<span>Avant de pouvoir poster un commentaire.</span>
-			</p>
-			<div id="comment_post_panel">
-				<% @comment_posts.each do |comment_post| %>
-					<%= render 'comment_posts/comment_post', comment_post: comment_post %>
+			<% if current_user %>
+				<h2 align="center">Ajouter un commentaire</h2>
+				<%= form_with model: [@post, @comment_post] do |f| %>
+					<p>
+						<%= f.text_area :content, class: 'form-control' %>
+					</p>
+					<%= f.submit "Commenter" %>
 				<% end %>
-			</div>
-		<% end %>
-
-		<h2 align="center">Commentaires</h2>
-		<% for comment_post in @comment_posts %>
-			<div class=" d-flex justify-content-around">
+				<br>
+				<div id="comment_post_panel">
+					<% @comment_posts.each do |comment_post| %>
+						<%= render 'comment_posts/comment_post', comment_post: comment_post %>
+					<% end %>
+				</div>
+			<% else %>
 				<p>
-					<%= truncate(comment_post.content, length: 100) %> ♥
+					<span>Vous devez vous connectez</span>
+					<%= link_to "Connexion", new_user_session_path %>
+					<span>Avant de pouvoir poster un commentaire.</span>
 				</p>
-				<span>
-					le <%= l(comment_post.created_at.to_date, format: :long) %>
-					<button class="btn btn-sm btn-danger ml-4">Supprimer</button>
-				</span>	
-			</div>
-		<% end %>
+			<% end %>
 
+		</div>
 	</div>
 </div>
