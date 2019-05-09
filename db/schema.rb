@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_08_205846) do
+ActiveRecord::Schema.define(version: 2019_05_09_132819) do
+
+  create_table "category_posts", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "category_products", force: :cascade do |t|
     t.string "name"
@@ -41,13 +47,16 @@ ActiveRecord::Schema.define(version: 2019_05_08_205846) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "content"
+    t.integer "category_post_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
     t.string "image_file_name"
     t.string "image_content_type"
     t.bigint "image_file_size"
     t.datetime "image_updated_at"
+    t.index ["category_post_id"], name: "index_posts_on_category_post_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -102,6 +111,20 @@ ActiveRecord::Schema.define(version: 2019_05_08_205846) do
     t.index ["telephone"], name: "index_users_on_telephone", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.string "votable_type"
+    t.integer "votable_id"
+    t.string "voter_type"
+    t.integer "voter_id"
+    t.boolean "vote_flag"
+    t.string "vote_scope"
+    t.integer "vote_weight"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
+    t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
   end
 
 end

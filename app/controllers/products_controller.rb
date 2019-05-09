@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
   before_action :authenticate_user!
 
   # GET /products
@@ -65,6 +65,16 @@ class ProductsController < ApplicationController
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def upvote
+    @product.liked_by current_user
+    redirect_back(fallback_location:products_path)
+  end
+
+  def downvote
+    @product.downvote_from current_user
+    redirect_back(fallback_location:products_path)
   end
 
   private

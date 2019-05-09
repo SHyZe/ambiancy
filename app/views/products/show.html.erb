@@ -47,6 +47,14 @@
 							<%= f.text_area :content %>
 						</p>
 						<%= f.submit "Commenter" %>
+						<%= link_to like_product_path(@product), method: :put do %>
+							<i class="far fa-thumbs-up"></i>
+							<%= @product.get_likes.size %>
+						<% end %>
+						<%= link_to dislike_product_path(@product), method: :put do %>
+							<i class="far fa-thumbs-down"></i>
+							<%= @product.get_dislikes.count %>
+						<% end %>
 					<% end %>
 					<br>
 					<div id="comment_product_panel">

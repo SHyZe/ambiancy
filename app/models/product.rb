@@ -3,6 +3,8 @@ class Product < ApplicationRecord
   belongs_to :category_product
   has_many :comment_products, dependent: :destroy
 
+  acts_as_votable
+
   def self.search(search)
 		if search
 			where(["name LIKE ?","%#{search}%"])

@@ -4,13 +4,13 @@
 
   <div class="form-inputs">
 		<%= f.input :image, as: :file %>
+    <%= f.input :title, class: 'form-control' %>
+    <%= f.input :content, class: 'form-control' %>
+    <%= select_tag(:category_post, options_for_select(@category_posts), :prompt => "Choisissez une Catégorie", class: 'form-control') %>
+    <%#= f.association :category_post, prompt: "Choisissez une Catégorie", class: '' %>
   </div>
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :content %>
-  </div>
-
+  <br>
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
   </div>
 <% end %>

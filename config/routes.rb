@@ -16,12 +16,20 @@ Rails.application.routes.draw do
   resources :posts do
     # post 'comment_posts', to: "comment_posts#create"
     resources :comment_posts, only:[:create, :destroy]
+    member do
+      put 'like', to: 'posts#upvote'
+      put 'dislike', to: 'posts#downvote'
+    end
   end
 
   ## PRODUCT
   resources :products do
     # post 'comment_products', to: "comment_products#create"
     resources :comment_products, only:[:create, :destroy]
+    member do
+      put 'like', to: 'products#upvote'
+      put 'dislike', to: 'products#downvote'
+    end
   end
 
 end

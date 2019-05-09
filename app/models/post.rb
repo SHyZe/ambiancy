@@ -1,7 +1,9 @@
 class Post < ApplicationRecord
 	belongs_to :user
-
+	belongs_to :category_post
 	has_many :comment_posts, dependent: :destroy
+
+	acts_as_votable
 
 	def self.search(search)
 		if search
