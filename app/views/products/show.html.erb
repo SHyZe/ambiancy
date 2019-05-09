@@ -1,66 +1,67 @@
-<div class="container mt-5" style="padding: 80px 0;">
-	<div class="card" style="width: 100%;">
-		<div class="row">
-			<div class="col offset-2 d-flex justify-content-around my-5">
-				<%= image_tag @product.picture.url(:big) %>
-			</div>
-			<div class="col">
-				<div class="col py-4 m-0">
+<p id="notice"><%= notice %></p>
 
-					<h1><%= @product.name %></h1>
-					<p>
-						<strong>Name:</strong>
-						<%= @product.name %>
-					</p>
+<div style="width: 1280px;">
+	<div class="row">
 
-					<p>
-						<strong>Description:</strong>
-						<%= @product.description %>
-					</p>
+		<div class="col offset-2 d-flex justify-content-around my-5">
+			<%= image_tag @product.picture.url(:big) %>
+		</div>
+		<div class="col">
+			<div class="col py-4 m-0">
 
-					<p>
-						<strong>Price:</strong>
-						<%= @product.price %>
-					</p>
+				<h1><%= @product.name %></h1>
+				<p>
+					<strong>Name:</strong>
+					<%= @product.name %>
+				</p>
 
-					<p>
-						<strong>Category product:</strong>
-						<%= @product.category_product.name %>
-					</p>
+				<p>
+					<strong>Description:</strong>
+					<%= @product.description %>
+				</p>
 
-					<p>
-						<strong>User:</strong>
-						<%= @product.user.username %></td>
-					</p>
+				<p>
+					<strong>Price:</strong>
+					<%= @product.price %>
+				</p>
 
-					<%= link_to 'Editer', edit_product_path(@product), class: 'btn btn-sm btn-warning' %> |
-					<%= link_to 'Retour', products_path, class: 'btn btn-sm btn-danger' %>
+				<p>
+					<strong>Category product:</strong>
+					<%= @product.category_product.name %>
+				</p>
 
-					<hr class="product_show">
+				<p>
+					<strong>User:</strong>
+					<%= @product.user.username %></td>
+				</p>
 
-					<% if current_user %>
-						<h2 align="center">Ajouter un commentaire</h2>
-						<%= form_with model: [@product] do |f| %>
-							<p>
-								<%= f.text_field :content %>
-							</p>
-							<%= f.submit "Commenter" %>
-						<% end %>
-						<br>
-						<div id="comment_product_panel">
-							<% @comment_products.each do |comment_product| %>
-								<%= render 'comment_products/comment_product', comment_product: comment_product %>
-							<% end %>
-						</div>
-					<% else %>
+				<%= link_to 'Editer', edit_product_path(@product), class: 'btn btn-sm btn-warning' %> |
+				<%= link_to 'Retour', products_path, class: 'btn btn-sm btn-danger' %>
+
+				<hr class="product_show">
+
+				<h2 align="center">Ajouter un commentaire</h2>
+				<% if current_user %>
+					<%= form_with model: [@product, @comment_product] do |f| %>
 						<p>
-							<span>Vous devez vous connectez</span>
-							<%= link_to "Connexion", new_user_session_path %>
-							<span>Avant de pouvoir poster un commentaire.</span>
+							<%= f.text_area :content %>
 						</p>
+						<%= f.submit "Commenter" %>
 					<% end %>
+					<br>
+					<div id="comment_product_panel">
+						<% @comment_products.each do |comment_product| %>
+							<%= render 'comment_products/comment_product', comment_product: comment_product %>
+						<% end %>
+					</div>
+				<% else %>
+					<p>
+						<span>Vous devez vous connectez</span>
+						<%= link_to "Connexion", new_user_session_path %>
+						<span>Avant de pouvoir poster un commentaire.</span>
+					</p>
+				<% end %>
 
-				</div>
 			</div>
 		</div>
 	</div>

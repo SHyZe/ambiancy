@@ -11,7 +11,8 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-    @comment_products = Product.find(params[:id]).comment_products
+    @comment_product = CommentProduct.new
+    @comment_products = @product.comment_products.order(created: :desc)
   end
 
   # GET /products/new

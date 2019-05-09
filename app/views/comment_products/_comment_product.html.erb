@@ -1,14 +1,14 @@
-<div id="comment_product-<%= comment_product.id %>">
+<div id="comment_product-<%= comment_product.id %>" align="center">
 	<small>le <%= l(comment_product.created_at.to_date, format: :long) %></small>
 	<b>
 		<%= comment_product.user.username %>
 	</b>
 	<% if user_signed_in? %>
 		<% if comment_product.user_id == current_user.id || current_user.admin? %>
-			<%= link_to "Supprimer", product_comment_product_path(@product, comment_product), method: :delete, remote: true, class: 'btn btn-sm btn-danger' %>
+			<%= link_to "Supprimer", product_comment_product_path(@product, comment_product), method: :delete, remote: true, class: 'btn btn-sm btn-danger', style: 'margin-left: 100px;' %>
 		<% end %>
 	<% end %>
-	<p>
+	<p style="margin-left: -230px">
 		<%= comment_product.content %>
 	</p>
 	<hr>

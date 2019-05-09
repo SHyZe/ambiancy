@@ -34,7 +34,7 @@
 							<tr>
 								<td><%= post.title %></td>
 								<td><%= truncate(post.content, length: 100) %></td>
-								<td><%= post.title.length %></td>
+								<td><%= post.comment_posts.count %></td>
 								<td><%= link_to 'Voir', post, class: 'btn btn-sm btn-info' %></td>
 								<td><%= link_to 'Editer', edit_post_path(post), class: 'btn btn-sm btn-warning' %></td>
 								<td><%= link_to 'Supprimer', post, method: :delete, data: { confirm: 'Êtes vous sure de vouloir supprimer ce Post ?' }, class: 'btn btn-sm btn-danger' %></td>
