@@ -3,22 +3,21 @@
 		<div class="col-12" align="center">
 			<h1>Mon Profil</h1>
 			<hr>
-			<% @users = User.all.each do |user| %>
 					<div class="col-6">
 						<p class="d-flex justify-content-between py-4">
-								<%= image_tag user.avatar.url(:medium) %>
+								<%= image_tag current_user.avatar.url(:medium) %>
 								<span class="text-right mt-5">
-									<%= user.username %>
+									<%= current_user.username %>
 									<br>
-									<%= user.email %>
+									<%= current_user.email %>
 									<br>
-									<%= user.pays %>
+									<%= current_user.pays %>
 									<br>
-									<%= user.ville %>
+									<%= current_user.ville %>
 									<br>
-									<%= user.telephone %>
+									<%= current_user.telephone %>
 									<br>
-									<%= user.zipcode %>
+									<%= current_user.zipcode %>
 								</span>
 						</p>
 					</div>
@@ -28,7 +27,6 @@
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus cum eaque corrupti minus est qui ipsum dignissimos cupiditate error quo deserunt, accusantium culpa ullam sit id animi provident, modi nulla.
 					</p>
 				</div>
-			<% end %>
 			<hr>
 		</div>
 	</div>

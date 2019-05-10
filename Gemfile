@@ -13,6 +13,9 @@ gem 'friendly_id', '~> 5.2', '>= 5.2.5'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'acts_as_votable', '~> 0.12.0'
 
+gem 'activeadmin', '~> 2.0'
+gem 'activeadmin-poro-decorator', '~> 0.2.0'
+
 ## BASE
 gem 'rails', '~> 5.2.3'
 gem 'sqlite3'
