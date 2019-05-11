@@ -12,9 +12,11 @@ gem 'devise', '~> 4.6', '>= 4.6.2'
 gem 'friendly_id', '~> 5.2', '>= 5.2.5'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'acts_as_votable', '~> 0.12.0'
+gem 'tinymce-rails', '~> 5.0', '>= 5.0.5'
 
 gem 'activeadmin', '~> 2.0'
 gem 'activeadmin-poro-decorator', '~> 0.2.0'
+gem 'active_admin_editor', github: 'boontdustie/active_admin_editor'
 
 ## BASE
 gem 'rails', '~> 5.2.3'

@@ -1,5 +1,36 @@
-<h1>New Post</h1>
+<div class="container mt-5">
+  <div class="row">
+    <div class="section col-12">
+      <div class="col py-4 m-0">
 
-<%= render 'form', post: @post %>
+      	<h1>Nouveau Post</h1>
 
-<%= link_to 'Back', posts_path %>
+        <%= simple_form_for(@post) do |f| %>
+          <%= f.error_notification %>
+          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+          <%= tinymce :default %>
+
+          <div class="form-inputs">
+        		<%= f.input :image, as: :file %>
+            <%= f.input :title, class: 'form-control' %>
+            <%= f.text_area :content, class: 'form-control tinymce' %><br />
+            <%= select_tag(:category_post, options_for_select(@category_posts), :prompt => "Choisissez une Catégorie", class: 'form-control') %>
+            <%#= f.association :category_post, prompt: "Choisissez une Catégorie", class: '' %>
+          </div>
+          <br>
+          <div class="form-actions">
+            <%= f.button :submit, class: 'btn btn-primary' %>
+            <%= link_to 'Retour', posts_path, class: 'btn btn-sm btn-danger' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

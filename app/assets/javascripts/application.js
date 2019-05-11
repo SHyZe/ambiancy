@@ -12,6 +12,7 @@
 //
 //= require jquery3
 //= require jquery_ujs
+//= require tinymce-jquery
 //= require popper
 //= require bootstrap
 //= require activestorage

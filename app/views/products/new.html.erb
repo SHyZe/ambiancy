@@ -1,5 +1,30 @@
-<h1>New Product</h1>
+<div class="container mt-5">
+  <div class="row">
+    <div class="section col-12">
+      <div class="col py-4 m-0">
 
-<%= render 'form', product: @product %>
+      	<h1>Nouveau Produit</h1>
 
-<%= link_to 'Back', products_path %>
+        <%= simple_form_for(@product) do |f| %>
+          <%= f.error_notification %>
+          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+          <%= tinymce :default %>
+
+          <div class="form-inputs">
+            <%= f.input :picture, as: :file %>
+            <%= f.input :name, class: 'form-control' %>
+            <%= f.text_area :description, class: 'form-control tinymce', rows: 10 %>
+            <%= f.input :price, class: 'form-control' %>
+            <%= f.association :category_product, prompt: "Choisissez une Catégorie", class: 'form-control' %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, class: 'btn btn-primary' %>
+						<%= link_to 'Back', products_path %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
