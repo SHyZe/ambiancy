@@ -1,158 +1,160 @@
-<div class="container mt-5 mb-5">
-	<div class="row">
-		<div class="col">
-			<div class="col py-4">
+<main>
+	<div class="container mt-5 mb-5">
+		<div class="row">
+			<div class="col">
+				<div class="col py-4">
 
-				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-					<ol class="carousel-indicators">
-						<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-					</ol>
-					<div class="carousel-inner">
-						<div class="carousel-item active">
-							<img src="https://www.prepbootstrap.com/Content/images/template/carouselstaticheader/slide_03.jpg" alt="First slide" />
-							<div class="carousel-caption">
-								<h3>Produit A</h3>
-								<p>
-									Meilleur Site du moment...
-								</p>
-								<p><a class="btn btn-clear btn-sm btn-min-block" href="#">Plus de Details</a></p>
+					<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+							<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+							<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+						</ol>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="https://www.prepbootstrap.com/Content/images/template/carouselstaticheader/slide_03.jpg" alt="First slide" />
+								<div class="carousel-caption">
+									<h3>Produit A</h3>
+									<p>
+										Meilleur Site du moment...
+									</p>
+									<p><a class="btn btn-clear btn-sm btn-min-block" href="#">Plus de Details</a></p>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<img src="https://www.prepbootstrap.com/Content/images/template/carouselstaticheader/slide_02.jpg" alt="Second slide" />
+								<div class="carousel-caption">
+									<h3>Produit B</h3>
+									<p>
+										Meilleurs contenus parmis tous les Sites
+									</p>
+									<p><a class="btn btn-clear btn-sm btn-min-block" href="#">Plus de Details</a></p>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<img src="https://www.prepbootstrap.com/Content/images/template/carouselstaticheader/slide_03.jpg" alt="Third slide" />
+								<div class="carousel-caption">
+									<h3>Produit C</h3>
+									<p>
+										Meilleur prix des Abonnements 
+									</p>
+									<p><a class="btn btn-clear btn-sm btn-min-block" href="#">Plus de Details</a></p>
+								</div>
 							</div>
 						</div>
-						<div class="carousel-item">
-							<img src="https://www.prepbootstrap.com/Content/images/template/carouselstaticheader/slide_02.jpg" alt="Second slide" />
-							<div class="carousel-caption">
-								<h3>Produit B</h3>
-								<p>
-									Meilleurs contenus parmis tous les Sites
-								</p>
-								<p><a class="btn btn-clear btn-sm btn-min-block" href="#">Plus de Details</a></p>
+						<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div> <!-- /carousel -->
+
+					<h2 class="mt-4" align="center">
+						Les Dernieres
+						<span class="text-gray text-small">| Nouveautés!</span>
+					</h2>
+
+					<hr class="title_accueil">
+
+					<div class="d-flex justify-content-between">
+		
+						<div class="example example1">
+							<div class="box box1">
+								<h2>Les Produits</h2>
+
+								<!-- <hr class="product_accueil"> -->
+								<hr>
+
+								<% @products.each do |product| %>
+									<%= product.name %>
+								<% end %>
+							<!-- <button class="btn btn-sm btn-primary">Envoyer</button> -->
 							</div>
 						</div>
-						<div class="carousel-item">
-							<img src="https://www.prepbootstrap.com/Content/images/template/carouselstaticheader/slide_03.jpg" alt="Third slide" />
-							<div class="carousel-caption">
-								<h3>Produit C</h3>
-								<p>
-									Meilleur prix des Abonnements 
-								</p>
-								<p><a class="btn btn-clear btn-sm btn-min-block" href="#">Plus de Details</a></p>
+
+						<!-- <hr class="post_accueil"> -->
+
+						<div class="example example2">
+							<div class="box box2">
+								<h2>Les Posts</h2>
+
+								<!-- <hr class="product_accueil"> -->
+								<hr>
+
+								<% @posts.each do |post| %>
+									<%= post.title %>
+								<% end %>
 							</div>
 						</div>
-					</div>
-					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="sr-only">Previous</span>
-					</a>
-					<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="sr-only">Next</span>
-					</a>
-				</div> <!-- /carousel -->
 
-				<h2 class="mt-4" align="center">
-					Les Dernieres
-					<span class="text-gray text-small">| Nouveautés!</span>
-				</h2>
+						<!-- <hr class="post_accueil"> -->
 
-				<hr class="title_accueil">
+						<div class="example example3">
+							<div class="box box3">
+								<h2>Les Films</h2>
 
-				<div class="d-flex justify-content-between">
-	
-					<div class="example example1">
-						<div class="box box1">
-							<h2>Les Produits</h2>
+								<!-- <hr class="product_accueil"> -->
+								<hr>
 
-							<!-- <hr class="product_accueil"> -->
-							<hr>
-
-							<% @products.each do |product| %>
-								<%= product.name %>
-							<% end %>
-						<!-- <button class="btn btn-sm btn-primary">Envoyer</button> -->
+								<% @posts.each do |post| %>
+									<%= post.title %>
+								<% end %>
+							</div>
 						</div>
+
 					</div>
+					<div class="d-flex justify-content-between">
+		
+						<div class="example example1">
+							<div class="box box1">
+								<h2>Les Messages</h2>
 
-					<!-- <hr class="post_accueil"> -->
+								<!-- <hr class="product_accueil"> -->
+								<hr>
 
-					<div class="example example2">
-						<div class="box box2">
-							<h2>Les Posts</h2>
-
-							<!-- <hr class="product_accueil"> -->
-							<hr>
-
-							<% @posts.each do |post| %>
-								<%= post.title %>
-							<% end %>
+								<% @products.each do |product| %>
+									<%= product.name %>
+								<% end %>
+							</div>
 						</div>
-					</div>
 
-					<!-- <hr class="post_accueil"> -->
+						<!-- <hr class="post_accueil"> -->
 
-					<div class="example example3">
-						<div class="box box3">
-							<h2>Les Films</h2>
+						<div class="example example2">
+							<div class="box box2">
+								<h2>Les Affiches</h2>
 
-							<!-- <hr class="product_accueil"> -->
-							<hr>
+								<!-- <hr class="product_accueil"> -->
+								<hr>
 
-							<% @posts.each do |post| %>
-								<%= post.title %>
-							<% end %>
+								<% @posts.each do |post| %>
+									<%= post.title %>
+								<% end %>
+							</div>
 						</div>
+
+						<!-- <hr class="post_accueil"> -->
+
+						<div class="example example3">
+							<div class="box box3">
+								<h2>Les Visiteurs</h2>
+
+								<!-- <hr class="product_accueil"> -->
+								<hr>
+
+								<% @posts.each do |post| %>
+									<%= post.title %>
+								<% end %>
+							</div>
+						</div>
+
 					</div>
 
 				</div>
-				<div class="d-flex justify-content-between">
-	
-					<div class="example example1">
-						<div class="box box1">
-							<h2>Les Messages</h2>
-
-							<!-- <hr class="product_accueil"> -->
-							<hr>
-
-							<% @products.each do |product| %>
-								<%= product.name %>
-							<% end %>
-						</div>
-					</div>
-
-					<!-- <hr class="post_accueil"> -->
-
-					<div class="example example2">
-						<div class="box box2">
-							<h2>Les Affiches</h2>
-
-							<!-- <hr class="product_accueil"> -->
-							<hr>
-
-							<% @posts.each do |post| %>
-								<%= post.title %>
-							<% end %>
-						</div>
-					</div>
-
-					<!-- <hr class="post_accueil"> -->
-
-					<div class="example example3">
-						<div class="box box3">
-							<h2>Les Visiteurs</h2>
-
-							<!-- <hr class="product_accueil"> -->
-							<hr>
-
-							<% @posts.each do |post| %>
-								<%= post.title %>
-							<% end %>
-						</div>
-					</div>
-
-				</div>
-
 			</div>
 		</div>
 	</div>
-</div>
+</main>

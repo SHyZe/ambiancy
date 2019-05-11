@@ -1,13 +1,11 @@
-<p id="notice"><%= notice %></p>
+<main>
+	<div class="section" style="width: 1280px;">
+		<div class="row">
 
-<div style="width: 1280px;">
-	<div class="row">
-
-		<div class="col offset-2 d-flex justify-content-around my-5">
-			<%= image_tag @product.picture.url(:big) %>
-		</div>
-		<div class="col">
-			<div class="col py-4 m-0">
+			<div class="col offset-1 d-flex justify-content-around my-5">
+				<%= image_tag @product.picture.url(:big) %>
+			</div>
+			<div class="col mt-5">
 
 				<h1><%= @product.name %></h1>
 				<p>
@@ -35,41 +33,49 @@
 					<%= @product.user.username %></td>
 				</p>
 
-				<%= link_to 'Retour', products_path, class: 'btn btn-sm btn-danger' %>
-
-				<hr class="product_show">
-
-				<h2 align="center">Ajouter un commentaire</h2>
-				<% if current_user %>
-					<%= form_with model: [@product, @comment_product] do |f| %>
-						<p>
-							<%= f.text_area :content %>
-						</p>
-						<%= f.submit "Commenter" %>
-						<%= link_to like_product_path(@product), method: :put do %>
-							<i class="far fa-thumbs-up"></i>
-							<%= @product.get_likes.size %>
-						<% end %>
-						<%= link_to dislike_product_path(@product), method: :put do %>
-							<i class="far fa-thumbs-down"></i>
-							<%= @product.get_dislikes.count %>
-						<% end %>
+				<p>
+					<%= link_to like_product_path(@product), method: :put do %>
+						<i class="far fa-thumbs-up"></i>
+						<%= @product.get_likes.size %>
 					<% end %>
-					<br>
-					<div id="comment_product_panel">
-						<% @comment_products.each do |comment_product| %>
-							<%= render 'comment_products/comment_product', comment_product: comment_product %>
-						<% end %>
-					</div>
-				<% else %>
-					<p>
-						<span>Vous devez vous connectez</span>
-						<%= link_to "Connexion", new_user_session_path %>
-						<span>Avant de pouvoir poster un commentaire.</span>
-					</p>
-				<% end %>
+					<%= link_to dislike_product_path(@product), method: :put do %>
+						<i class="far fa-thumbs-down"></i>
+						<%= @product.get_dislikes.count %>
+					<% end %>
+				</p>
+
+				<%= link_to 'Retour', products_path, class: 'btn btn-sm btn-danger' %>
 
 			</div>
 		</div>
 	</div>
 </div>
+
+<div class="container col-10">
+	<hr class="product_show">
+
+	<%= tinymce :default %>
+
+		<h2 align="center">Ajouter un commentaire</h2>
+		<% if current_user %>
+			<%= form_with model: [@product, @comment_product] do |f| %>
+				<p>
+					<%= f.text_area :content, class: 'form-control tinymce', rows: 4 %>
+				</p>
+				<%= f.submit "Commenter" %>
+			<% end %>
+			<br>
+			<div id="comment_product_panel">
+				<% @comment_products.each do |comment_product| %>
+					<%= render 'comment_products/comment_product', comment_product: comment_product %>
+				<% end %>
+			</div>
+		<% else %>
+			<p>
+				<span>Vous devez vous connectez</span>
+				<%= link_to "Connexion", new_user_session_path %>
+				<span>Avant de pouvoir poster un commentaire.</span>
+			</p>
+		<% end %>
+	</div>
+</main>

@@ -12,4 +12,29 @@ ActiveAdmin.register User do
 #   permitted
 # end
 
+	index do
+		column :id
+		column :username
+		column :email
+		column :avatar_file_name
+		column :pays
+		column :ville
+		column :telephone
+		column :zipcode
+		actions
+	end
+
+	form title: 'Product form' do |f|
+		inputs 'Details for product form' do
+			input :username
+			input :email
+			input :avatar
+			input :pays
+			input :ville
+			input :telephone
+			input :zipcode
+		end
+		actions
+	end
+
 end

@@ -25,7 +25,7 @@ ActiveAdmin.register Product do
 	form title: 'Product form' do |f|
 		inputs 'Details for product form' do
 			input :name
-			input :description
+			input :description, as: :html_editor
 		end
 		actions
 	end

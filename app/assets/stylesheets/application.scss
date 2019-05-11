@@ -12,13 +12,14 @@
  *
  *= require active_admin/editor/wysiwyg
  *= require_tree .
+ *= stub "active_admin"
  *= require_self
  */
 
 /* Custom bootstrap variables must be set or imported *before* bootstrap.*/
 @import "bootstrap";
 
-body{
+main{
 	margin-top: 80px;
 	margin-bottom: 150px;
 }

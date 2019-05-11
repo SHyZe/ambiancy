@@ -1,62 +1,71 @@
-<p id="notice"><%= notice %></p>
+<main>
+	<div class="section" style="width: 1280px;">
+		<div class="row">
 
-<div style="width: 1280px;">
-	<div class="row">
+			<div class="col offset-1 d-flex justify-content-around my-5">
+				<%= image_tag @post.image.url(:big) %>
+			</div>
+			<div class="col mt-5">
 
-		<div class="col offset-2 d-flex justify-content-around my-5">
-			<%= image_tag @post.image.url(:big) %>
-		</div>
-		<div class="col mt-4">
+				<p>
+					<strong class="text-primary">Title:</strong>
+					<%= @post.title %>
+				</p>
 
-			<p>
-				<strong>Title:</strong>
-				<%= @post.title %>
-			</p>
+				<p>
+					<strong class="text-primary">Content:</strong>
+					<%= @post.content.html_safe %>
+				</p>
 
-			<p>
-				<strong>Content:</strong>
-				<%= @post.content %>
-			</p>
-
-			<p>
-					<strong>Category post:</strong>
+				<p>
+					<strong class="text-primary">Category post:</strong>
 					<%= @post.category_post.name %>
 				</p>
 
-			<%= link_to 'Retour', posts_path, class: 'btn btn-sm btn-danger' %>
-
-			<hr class="post_show">
-
-			<% if current_user %>
-				<h2 align="center">Ajouter un commentaire</h2>
-				<%= form_with model: [@post, @comment_post] do |f| %>
-					<p>
-						<%= f.text_area :content, class: 'form-control' %>
-					</p>
-					<%= f.submit "Commenter" %>
+				<p>
 					<%= link_to like_post_path(@post), method: :put do %>
-						<i class="far fa-thumbs-up"></i>
 						<%= @post.get_likes.size %>
+						<i class="far fa-thumbs-up"></i>
 					<% end %>
 					<%= link_to dislike_post_path(@post), method: :put do %>
-						<i class="far fa-thumbs-down"></i>
 						<%= @post.get_dislikes.count %>
+						<i class="far fa-thumbs-down"></i>
 					<% end %>
-				<% end %>
-				<br>
-				<div id="comment_post_panel">
-					<% @comment_posts.each do |comment_post| %>
-						<%= render 'comment_posts/comment_post', comment_post: comment_post %>
-					<% end %>
-				</div>
-			<% else %>
-				<p>
-					<span>Vous devez vous connectez</span>
-					<%= link_to "Connexion", new_user_session_path %>
-					<span>Avant de pouvoir poster un commentaire.</span>
 				</p>
-			<% end %>
 
+				<p>
+					<%= link_to 'Retour', posts_path, class: 'btn btn-sm btn-danger' %>
+				</p>
+
+			</div>
 		</div>
 	</div>
-</div>
+
+	<div class="container col-10">
+		<hr class="post_show">
+
+		<%= tinymce :default %>
+
+		<% if current_user %>
+			<h2 align="center">Ajouter un commentaire</h2>
+			<%= form_with model: [@post, @comment_post] do |f| %>
+				<p>
+					<%= f.text_area :content, class: 'form-control tinymce', rows: 4 %>
+				</p>
+				<%= f.submit "Commenter" %>
+			<% end %>
+			<br>
+			<div id="comment_post_panel">
+				<% @comment_posts.each do |comment_post| %>
+					<%= render 'comment_posts/comment_post', comment_post: comment_post %>
+				<% end %>
+			</div>
+		<% else %>
+			<p>
+				<span>Vous devez vous connectez</span>
+				<%= link_to "Connexion", new_user_session_path %>
+				<span>Avant de pouvoir poster un commentaire.</span>
+			</p>
+		<% end %>
+	</div>
+</main>

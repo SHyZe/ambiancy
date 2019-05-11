@@ -1,14 +1,16 @@
-<div id="comment_post-<%= comment_post.id %>" align="center">
+<div class="text-left" id="comment_post-<%= comment_post.id %>" align="center">
 	<small>le <%= l(comment_post.created_at.to_date, format: :long) %></small>
 	<b>
 		<%= comment_post.user.username %>
 	</b>
 	<% if user_signed_in? %>
 		<% if comment_post.user_id == current_user.id || current_user.admin? %>
-			<%= link_to "Supprimer", post_comment_post_path(@post, comment_post), method: :delete, remote: true, class: 'btn btn-sm btn-danger', style: 'margin-left: 100px;' %>
+			<span class="float-right">
+				<%= link_to "Supprimer", post_comment_post_path(@post, comment_post), method: :delete, remote: true, class: 'btn btn-sm btn-danger' %>
+			</span>
 		<% end %>
 	<% end %>
-	<p style="margin-left: -230px">
+	<p class="text-left">
 		<%= comment_post.content %>
 	</p>
 	<hr>
