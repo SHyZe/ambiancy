@@ -18,3 +18,15 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+// SideBar Menu Toggle Script
+// $("#menu-toggle").click(function(e) {
+// 	e.preventDefault();
+// 	$("#wrapper").toggleClass("toggled");
+// });
+$(document).ready(function() {
+	$('.sidebar .nav-pills a').click(function() {
+		$('.sidebar .nav-pills li.active').removeClass('active');
+		$(this).parent().addClass('active');
+	});
+});

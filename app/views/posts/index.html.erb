@@ -1,56 +1,58 @@
-<div class="container mt-5" style="padding: 80px 0;">
-	<div class="row">
-		<div class="col">
-			<div class="col py-4 m-0">
+<main>
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col">
+				<div class="col py-4 m-0">
 
-				<div class="field">
-					<h1>Tous mes Posts
-						<!-- <small class="p_count text-muted">
-							<%# @posts.each do |post| %>
-								<%#= pluralize(post.comment_posts.count, "Commentaire") %>
-							<%# end %>
-						</small> -->
-					</h1>
-					<p>
-						<%= form_tag posts_path, method: :get do %>
-							<%= text_field_tag :search, params[:search] %>
-							<%= submit_tag "Rechercher" %>
-						<% end %>
-					</p>
-				</div>
+					<div class="field">
+						<h1>Tous mes Posts
+							<!-- <small class="p_count text-muted">
+								<%# @posts.each do |post| %>
+									<%#= pluralize(post.comment_posts.count, "Commentaire") %>
+								<%# end %>
+							</small> -->
+						</h1>
+						<p>
+							<%= form_tag posts_path, method: :get do %>
+								<%= text_field_tag :search, params[:search] %>
+								<%= submit_tag "Rechercher" %>
+							<% end %>
+						</p>
+					</div>
 
-				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th>Titre</th>
-							<th>Contenu</th>
-							<th>Categorie</th>
-							<th>Commentaire(s)</th>
-							<th colspan="3">Actions</th>
-						</tr>
-					</thead>
-
-					<tbody>
-						<% @posts.each do |post| %>
+					<table class="table table-striped">
+						<thead>
 							<tr>
-								<td><%= post.title %></td>
-								<td><%= truncate(post.content, length: 100) %></td>
-								<td><%= post.category_post.name %></td>
-								<td><%= post.comment_posts.count %></td>
-								<td><%= link_to 'Voir', post, class: 'btn btn-sm btn-info' %></td>
-								<% if current_user || current_user.admin %>
-									<td><%= link_to 'Editer', edit_post_path(post), class: 'btn btn-sm btn-warning' %></td>
-									<td><%= link_to 'Supprimer', post, method: :delete, data: { confirm: 'Êtes vous sure de vouloir supprimer ce Post ?' }, class: 'btn btn-sm btn-danger' %></td>
-								<% end %>
+								<th>Titre</th>
+								<th>Contenu</th>
+								<th>Categorie</th>
+								<th>Commentaire(s)</th>
+								<th colspan="3">Actions</th>
 							</tr>
-						<% end %>
-					</tbody>
-				</table>
+						</thead>
 
-				<br>
+						<tbody>
+							<% @posts.each do |post| %>
+								<tr>
+									<td><%= post.title %></td>
+									<td><%= truncate(post.content, length: 100) %></td>
+									<td><%= post.category_post.name %></td>
+									<td><%= post.comment_posts.count %></td>
+									<td><%= link_to 'Voir', post, class: 'btn btn-sm btn-info' %></td>
+									<% if current_user || current_user.admin %>
+										<td><%= link_to 'Editer', edit_post_path(post), class: 'btn btn-sm btn-warning' %></td>
+										<td><%= link_to 'Supprimer', post, method: :delete, data: { confirm: 'Êtes vous sure de vouloir supprimer ce Post ?' }, class: 'btn btn-sm btn-danger' %></td>
+									<% end %>
+								</tr>
+							<% end %>
+						</tbody>
+					</table>
 
-				<%= link_to 'New Post', new_post_path %>
+					<br>
+
+					<%= link_to 'New Post', new_post_path %>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
+</main>
