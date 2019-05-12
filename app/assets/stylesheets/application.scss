@@ -18,116 +18,77 @@
 
 /* Custom bootstrap variables must be set or imported *before* bootstrap.*/
 @import "bootstrap";
+@import 'ionicons';
 
-// main{
-// 	margin-top: 80px;
-// 	margin-bottom: 150px;
-// 	width: 1280px;
-// 	margin-left: 60px;
-// 	z-index: 1;
-// 	user-select: none;
-// }
-
-// main [target] {
-// 	margin-top: 80px;
-// 	margin-bottom: 150px;
-// 	width: 1300px;
-// 	margin-left: 155px;
-// 	z-index: 1;
-// 	user-select: all;
-// }
-
-/*
- * Sidebar
- */
+// SideBar Personnel
 .sidebar {
   position: fixed;
-  top: 0;
+  top: -10px;
   bottom: 0;
   left: 0;
-  // z-index: 100; /* Behind the navbar */
-  padding: 48px 0 0; /* Height of navbar */
-  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-  max-width: 16%;
-  z-index: 3;
+  float: left;
+  width: 100px;
+  margin-left: -100px;
+  height: 100%;
+  background: #2C3E50;
+  overflow: hidden;
+  transition: 0.6s all;
+}
+.sidebar ul {
+  margin: 0;
+  padding: 0;
+}
+.sidebar ul li {
+  list-style: none;
+}
+.sidebar ul li a {
+  text-decoration: none;
+  color: white;
+  width: 100%;
+  font-size: 30px;
+  line-height: 50px;
+  text-align: center;
+  display: block;
+  transition: 0.6s all;
+}
+.sidebar ul li a:hover {
+  background: #34495E;
+}
+.btn_sidebar {
+  float: left;
+  top: -10px;
+  margin-left: 0px;
+  margin-top: -24px;
+  padding: 0 15px;
+  font-size: 30px;
+  text-decoration: none;
+  background: #2C3E50;
+  color: white !important;
+  font-family: Ionicons;
+  transition: 0.6s all;
+  cursor: pointer;
+}
+a.btn_sidebar:hover {
+  background: #34495E !important;
+}
+.btn_sidebar:before {
+  content: '\f20d';
+}
+.btnc_sidebar:before {
+  content: '\f12a';
 }
 
-.sidebar-sticky {
-  position: relative;
-  top: 0;
-  height: calc(100vh - 48px);
-  padding-top: .5rem;
-  overflow-x: hidden;
-  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+.side {
+  width: 100px;
+  margin-left: 0px;
+  height: 100%;
+  transition: 0.6s all;
 }
-
-@supports ((position: -webkit-sticky) or (position: sticky)) {
-  .sidebar-sticky {
-    position: -webkit-sticky;
-    position: sticky;
-  }
+a.btnc_sidebar.side {
+  margin-left: 100px;
+  padding: 0 35px !important;
+  transition: 0.6s all;
 }
-
-.sidebar .nav-link {
-  font-weight: 500;
-  color: #333;
-}
-
-.sidebar .nav-link .feather {
-  margin-right: 4px;
-  color: #999;
-}
-
-.sidebar .nav-link.active {
-  color: #007bff;
-}
-
-.sidebar .nav-link:hover .feather,
-.sidebar .nav-link.active .feather {
-  color: inherit;
-}
-
-.sidebar-heading {
-  font-size: .75rem;
-  text-transform: uppercase;
-}
-
-/*
- * Content
- */
-
-[role="main"] {
-  padding-top: 133px; /* Space for fixed navbar */
-}
-
-@media (min-width: 768px) {
-  [role="main"] {
-    padding-top: 48px; /* Space for fixed navbar */
-  }
-}
-
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 22px;  /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-  color: #313131;
-
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-
-  /* Support for IE. */
-  font-feature-settings: 'liga';
+a.btnc_sidebar.side:hover {
+  background: #34495E !important;
 }

@@ -4,7 +4,7 @@
 			margin-top: 80px;
 			margin-bottom: 150px;
 			width: 1300px;
-			margin-left: 160px;
+			margin-left: 125px;
 			z-index: 1;
 		}
 		
@@ -21,94 +21,44 @@
 	</style>
 <% end %>
 
+<!-- SIDEBAR -->
 <% if user_signed_in? && current_user.admin? %>
-	<nav class="col-md-2 d-none d-md-block bg-light sidebar">
-		<div class="sidebar-sticky">
-			<ul class="nav flex-column">
-				<li class="nav-item">
-					<a class="nav-link active" href="#">
-						<span data-feather="home"></span>
-						<i class="material-icons">face</i>
-						Dashboard <span class="sr-only">(current)</span>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">
-						<span data-feather="file"></span>
-						<i class="material-icons">face</i>
-						Orders
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">
-						<span data-feather="shopping-cart"></span>
-						<i class="material-icons">face</i>
-						Products
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">
-						<span data-feather="users"></span>
-						<i class="material-icons">face</i>
-						Customers
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">
-						<span data-feather="bar-chart-2"></span>
-						<i class="material-icons">face</i>
-						Reports
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">
-						<span data-feather="layers"></span>
-						<i class="material-icons">face</i>
-						Integrations
-					</a>
-				</li>
+	<div class="sidebar mt-5 navbar-dark bg-dark">
+		<h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+			<span>Utilisateur</span>
+			<a class="d-flex align-items-center text-muted" href="#">
+				<span data-feather="plus-circle"></span>
+			</a>
+			</h6>
+			<ul>
+				<!-- <li><a class="ion-social-tux" href="#"></a></li> -->
+				<li><ion-icon name="heart"></ion-icon></li>
+				<li><a class="ion-social-wordpress" href="#"></a></li>
+				<li><a class="ion-social-instagram" href="#"></a></li>
+				<li><a class="ion-android-folder" href="#"></a></li>
+				<li><a class="ion-android-mail" href="#"></a></li>
+				<li><a class="ion-android-image" href="#"></a></li>
+				<li><a class="ion-android-cloud" href="#"></a></li>
 			</ul>
 
 			<h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-				<span>Saved reports</span>
+				<span>Saved & reports</span>
 				<a class="d-flex align-items-center text-muted" href="#">
 					<span data-feather="plus-circle"></span>
 				</a>
 			</h6>
-			<ul class="nav flex-column mb-2">
-				<li class="nav-item">
-					<a class="nav-link" href="#">
-						<span data-feather="file-text"></span>
-						<i class="material-icons">face</i>
-						Current month
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">
-						<span data-feather="file-text"></span>
-						<i class="material-icons">face</i>
-						Last quarter
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">
-						<span data-feather="file-text"></span>
-						<i class="material-icons">face</i>
-						Social engagement
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">
-						<span data-feather="file-text"></span>
-						<i class="material-icons">face</i>
-						Year-end sale
-					</a>
-				</li>
+			<ul>
+				<li><a class="ion-android-folder" href="#"></a></li>
+				<li><a class="ion-android-mail" href="#"></a></li>
+				<li><a class="ion-android-image" href="#"></a></li>
+				<li><a class="ion-android-cloud" href="#"></a></li>
 			</ul>
 		</div>
-	</nav>
+	</div>
+	<a class="btn_sidebar bg-dark"></a>
 <% end %>
 
+<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 	<div class="navbar-brand" href="#">Ambianc<sup>y</sup></div>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -175,3 +125,12 @@
 		</ul>
 	</div>
 </nav>
+
+<script type="text/javascript">
+	// SideBar Menu Toggle Script
+	$('.btn_sidebar').on("click",function(){
+		$('.btn_sidebar').toggleClass('btnc_sidebar');
+		$('.sidebar').toggleClass('side');
+		$('.btn_sidebar').toggleClass('side');
+	});
+</script>

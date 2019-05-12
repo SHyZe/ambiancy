@@ -33,8 +33,6 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
-    active_bootstrap_skin (0.1.4)
-      bootstrap-sass (~> 3.3.6)
     activeadmin (2.0.0)
       arbre (~> 1.2, >= 1.2.1)
       formtastic (~> 3.1)
@@ -93,9 +91,6 @@ GEM
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 1.14.3, < 2)
       sassc-rails (>= 2.0.0)
-    bootstrap-sass (3.3.7)
-      autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
     brakeman (4.5.0)
     builder (3.2.3)
     byebug (11.0.1)
@@ -153,6 +148,7 @@ GEM
       has_scope (~> 0.6)
       railties (>= 5.0, < 6.0)
       responders (~> 2.0)
+    ionicons-rails (2.0.0)
     jbuilder (2.8.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
@@ -322,7 +318,6 @@ PLATFORMS
 
 DEPENDENCIES
   active_admin_editor!
-  active_bootstrap_skin (~> 0.1.4)
   activeadmin (~> 2.0)
   activeadmin-poro-decorator (~> 0.2.0)
   acts-as-taggable-on (~> 6.0)
@@ -338,6 +333,7 @@ DEPENDENCIES
   guard (~> 2.15)
   guard-livereload (~> 2.5, >= 2.5.2)
   hirb (~> 0.7.3)
+  ionicons-rails (~> 2.0)
   jbuilder (~> 2.5)
   jquery-rails (~> 4.3, >= 4.3.3)
   paperclip (~> 6.1)
