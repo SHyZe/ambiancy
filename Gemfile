@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.3'
+ruby '2.6.0'
 
 ## AJOUT PERSONNEL
 gem 'bootstrap', '~> 4.3', '>= 4.3.1'
@@ -22,7 +22,7 @@ gem 'active_admin_theme', '~> 1.0', '>= 1.0.3'
 
 ## BASE
 gem 'rails', '~> 5.2.3'
-gem 'sqlite3'
+gem 'pg'
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
