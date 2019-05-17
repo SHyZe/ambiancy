@@ -14,6 +14,7 @@ gem 'acts-as-taggable-on', '~> 6.0'
 gem 'acts_as_votable', '~> 0.12.0'
 gem 'tinymce-rails', '~> 5.0', '>= 5.0.5'
 gem 'ionicons-rails', '~> 2.0'
+gem 'rails_12factor', group: :production
 
 gem 'activeadmin', '~> 2.0'
 gem 'activeadmin-poro-decorator', '~> 0.2.0'

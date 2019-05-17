@@ -17,9 +17,9 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  database: ambiancy_dev
-  username: postgres
-  password: 
+  database: d1k3moqs9mot1b
+  username: eazpbkaakamfuh
+  password: 86bc569655df003795e67123176e28c27b0b204f4e8e62249d916c331b38df1d
   host: localhost
   port: 5432
   timeout: 5000
