@@ -19,9 +19,7 @@ ActiveAdmin.register Post do
 		column :id
 		column :title
 		column :content
-		column :comment_post
     column :image_file_name
-		column :category_post_id
 		column :user_id
 		actions
 	end

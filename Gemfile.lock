@@ -33,6 +33,7 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    active_admin_theme (1.0.3)
     activeadmin (2.0.0)
       arbre (~> 1.2, >= 1.2.1)
       formtastic (~> 3.1)
@@ -112,6 +113,8 @@ GEM
     erubi (1.8.0)
     eventmachine (1.2.7-x64-mingw32)
     execjs (2.7.0)
+    faker (1.9.3)
+      i18n (>= 0.7)
     ffi (1.10.0-x64-mingw32)
     formatador (0.2.5)
     formtastic (3.1.5)
@@ -318,6 +321,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_admin_editor!
+  active_admin_theme (~> 1.0, >= 1.0.3)
   activeadmin (~> 2.0)
   activeadmin-poro-decorator (~> 0.2.0)
   acts-as-taggable-on (~> 6.0)
@@ -329,6 +333,7 @@ DEPENDENCIES
   brakeman (~> 4.4)
   byebug
   devise (~> 4.6, >= 4.6.2)
+  faker (~> 1.9, >= 1.9.3)
   friendly_id (~> 5.2, >= 5.2.5)
   guard (~> 2.15)
   guard-livereload (~> 2.5, >= 2.5.2)

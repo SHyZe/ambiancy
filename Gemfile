@@ -18,6 +18,7 @@ gem 'ionicons-rails', '~> 2.0'
 gem 'activeadmin', '~> 2.0'
 gem 'activeadmin-poro-decorator', '~> 0.2.0'
 gem 'active_admin_editor', github: 'boontdustie/active_admin_editor'
+gem 'active_admin_theme', '~> 1.0', '>= 1.0.3'
 
 ## BASE
 gem 'rails', '~> 5.2.3'
@@ -36,6 +37,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'faker', '~> 1.9', '>= 1.9.3'
 end
 
 group :development do

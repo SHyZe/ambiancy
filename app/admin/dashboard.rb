@@ -10,7 +10,7 @@ ActiveAdmin.register_page "Dashboard" do
 		# end
 		
 		section "Recent post", :priority => 1 do
-			table_for Post.order("id desc").limit(2) do
+			table_for Post.order("id desc").limit(10) do
 				column :id
 				column :title do |post|
 					link_to post.title,[:admin, post]
@@ -21,7 +21,7 @@ ActiveAdmin.register_page "Dashboard" do
 		end
 
 		section "Recent product", :priority => 2 do
-			table_for Product.order("id desc").limit(2) do
+			table_for Product.order("id desc").limit(10) do
 				column :id
 				column :name do |product|
 					link_to product.name,[:admin, product]

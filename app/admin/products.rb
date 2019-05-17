@@ -16,8 +16,7 @@ ActiveAdmin.register Product do
 		column :title
 		column :description
 		column :price
-		column :comment_products
-		column :category_product_id
+    column :picture_file_name
 		column :user_id
 		actions
 	end
